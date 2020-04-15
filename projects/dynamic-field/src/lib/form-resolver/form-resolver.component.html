@@ -1,0 +1,9 @@
+<div *ngFor="let fieldType of fieldTypes"  [class]="fieldType.content.field.name">
+    <label>{{fieldType.content.field.label}}</label>
+    <div class="field">
+        <ng-container *ngxComponentOutlet="fieldType.typ; context: {
+            control: fieldType.content.control,
+            field: fieldType.content.field
+        }"></ng-container>
+    </div>
+</div>
