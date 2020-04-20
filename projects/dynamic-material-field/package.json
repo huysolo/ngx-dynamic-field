@@ -1,5 +1,5 @@
 {
-  "name": "@huysolo/dynamic-material-field",
+  "name": "ngx-dynamic-material-field",
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^9.1.1",

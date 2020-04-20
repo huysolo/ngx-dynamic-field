@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BaseFieldComponent } from 'projects/dynamic-field/src/public-api';
+import { BaseFieldComponent } from 'ngx-dynamic-field';
 
 @Component({
   selector: 'ngx-date-picker-field',

@@ -5894,6 +5894,11 @@ ng-packagr@^9.0.0:
     terser "^4.3.8"
     update-notifier "^4.0.0"
 
+ngx-dynamic-field@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-dynamic-field/-/ngx-dynamic-field-1.0.1.tgz#056e0ec34acebf1eaa9bb1d1d833ac51e5a9954d"
+  integrity sha512-KcgLCotw+6hQXGUr9qJ5N5JXkLpDJhjij8O7aDmoehhqXe3aI2aQK2oh/OAL+qr5L2vWAH8Q9yRIWD/i6W0bRg==
+
 ngx-mat-select-search@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ngx-mat-select-search/-/ngx-mat-select-search-2.1.2.tgz#08ab68ac91239b5591a04669e298a9a6aeb0eea4"

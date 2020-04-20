@@ -9,7 +9,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FieldContext } from 'projects/dynamic-field/src/public-api';
+import { FieldContext } from 'ngx-dynamic-field';
 import { SelectFieldModel } from 'projects/dynamic-material-field/src/lib/field.model';
 import { of } from 'rxjs';
 

@@ -1,5 +1,4 @@
-import {  Input } from '@angular/core';
-import { BaseFieldComponent, FieldContext } from 'dynamic-field';
+import { BaseFieldComponent, FieldContext } from 'ngx-dynamic-field';
 import { Observable } from 'rxjs';
 import { SelectFieldModel } from '../../field.model';
 import { FormControl } from '@angular/forms';

@@ -1,6 +1,6 @@
-import { NgModule, InjectionToken, ModuleWithProviders, Type } from '@angular/core';
+import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { InputFieldComponent } from './components/fields/input-field/input-field.component';
-import { DynamicFieldModule, BaseFieldComponent } from 'projects/dynamic-field/src/public-api';
+import { DynamicFieldModule } from 'ngx-dynamic-field';
 import { DynamicMaterialFieldService, AbstractFieldConfigService } from './dynamic-material-field.service';
 
 import {MatFormFieldModule} from '@angular/material/form-field';

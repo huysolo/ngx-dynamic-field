@@ -1,6 +1,7 @@
 import { InjectionToken, Type } from '@angular/core';
-import { BaseFieldComponent } from 'projects/dynamic-field/src/public-api';
-
-export const FieldsToken = new InjectionToken<{
+import { BaseFieldComponent } from 'ngx-dynamic-field';
+export interface FieldMap {
     [key: string]: Type<BaseFieldComponent>
-}>('fieldsToken');
+}
+export const FieldsToken = new InjectionToken<FieldMap>('fieldsToken');
+

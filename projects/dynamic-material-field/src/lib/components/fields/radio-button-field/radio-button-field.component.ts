@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BaseFieldComponent, FieldContext } from 'projects/dynamic-field/src/public-api';
+import { BaseFieldComponent, FieldContext } from 'ngx-dynamic-field';
 import { AbstractFieldConfigService } from '../../../dynamic-material-field.service';
 import { Observable } from 'rxjs';
 import { SelectFieldModel } from '../../../field.model';

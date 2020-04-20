@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { NgxFieldModel } from 'projects/dynamic-field/src/public-api';
+import { NgxFieldModel } from 'ngx-dynamic-field';
 import { FieldModel } from 'projects/dynamic-material-field/src/public-api';
 import { interval } from 'rxjs';
 import { skip } from 'rxjs/operators';

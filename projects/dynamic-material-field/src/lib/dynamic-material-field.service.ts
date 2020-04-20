@@ -1,10 +1,9 @@
-import { AbstractGenerateFieldService, NgxFieldModel, FieldType, DynamicFormGroupComponent, FieldContext } from 'dynamic-field';
+import { AbstractGenerateFieldService, NgxFieldModel, FieldType, DynamicFormGroupComponent, FieldContext } from 'ngx-dynamic-field';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { SelectFieldModel } from './field.model';
 import { Inject, Type, Injectable } from '@angular/core';
-import {FieldsToken} from './components/fields'
-import { BaseFieldComponent } from 'projects/dynamic-field/src/public-api';
+import {FieldsToken, FieldMap} from './components/fields'
 export interface FieldModel extends NgxFieldModel {
   displayType?: string;
   fields?: FieldModel[]
@@ -17,9 +16,7 @@ export interface SelectModel {
 
 @Injectable()
 export class DynamicMaterialFieldService extends AbstractGenerateFieldService<FieldModel> {
-  constructor(@Inject(FieldsToken) private fieldsTokenService: {
-    [key: string]: Type<BaseFieldComponent>
-  }){
+  constructor(@Inject(FieldsToken) private fieldsTokenService: FieldMap){
     super();
   }
   getTypeByField(field: FieldModel): FieldType<FieldModel> {
