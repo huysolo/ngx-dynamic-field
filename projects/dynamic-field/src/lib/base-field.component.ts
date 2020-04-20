@@ -1,8 +1,6 @@
 import { Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { NgxFieldModel, FieldContent } from './field.model';
+import { NgxFieldModel, FieldContext } from './field.model';
 
-export abstract class BaseFieldComponent<FieldModel extends NgxFieldModel = NgxFieldModel> implements FieldContent<FieldModel>{
-  @Input() control: FormControl;
-  @Input() field: FieldModel;
+export abstract class BaseFieldComponent<FieldModel extends NgxFieldModel = NgxFieldModel>{
+  @Input() context: FieldContext<FieldModel>
 }

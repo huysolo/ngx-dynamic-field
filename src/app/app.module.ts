@@ -7,6 +7,7 @@ import { DynamicMaterialFieldModule } from 'projects/dynamic-material-field/src/
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatNativeDateModule,
     MatButtonModule,
+    HttpClientModule,
     DynamicMaterialFieldModule
   ],
   providers: [],

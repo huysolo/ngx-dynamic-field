@@ -4,6 +4,7 @@ import { NgxFieldModel } from 'projects/dynamic-field/src/public-api';
 import { FieldModel } from 'projects/dynamic-material-field/src/public-api';
 import { interval } from 'rxjs';
 import { skip } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -30,12 +31,22 @@ export class AppComponent {
     }
   ];
   nunglonham: boolean;
-  constructor() {
+  constructor(private http: HttpClient) {
     interval(500).subscribe(() => this.nunglonham = this.form.invalid);
     this.form.setValue({
       text: 'xxx',
       date: new Date()
     });
+
+    this.http.get<{
+      LtsItem: Array<{ID: string}>}>('https://thongtindoanhnghiep.co/api/city').subscribe(res => {
+      res.LtsItem.forEach(city => {
+        this.http.get(`https://thongtindoanhnghiep.co/api/city/${city.ID}/district`).subscribe(res => {
+          
+        })
+      })  
+   
+    })
   }
   isDisabled() {
     return this.form.invalid;

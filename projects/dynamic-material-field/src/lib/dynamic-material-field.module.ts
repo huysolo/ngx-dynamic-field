@@ -18,6 +18,7 @@ import { SelectBoxFieldComponent } from './components/fields/select-box-field/se
 import { DatePickerFieldComponent } from './components/fields/date-picker-field/date-picker-field.component';
 import { RadioButtonFieldComponent } from './components/fields/radio-button-field/radio-button-field.component';
 import { NumberFieldComponent } from './components/fields/number-field/number-field.component';
+import { BaseSelectFieldComponent } from './components/fields/base-select-field.component';
 
 const fields = [
   InputFieldComponent,
@@ -26,7 +27,8 @@ const fields = [
   DatePickerFieldComponent,
   SelectBoxFieldComponent,
   RadioButtonFieldComponent,
-  NumberFieldComponent
+  NumberFieldComponent,
+  BaseSelectFieldComponent
 ];
 
 const components = [

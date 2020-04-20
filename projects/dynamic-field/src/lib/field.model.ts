@@ -14,7 +14,8 @@ export interface NgxTypeValueModel {
     name: string;
 }
 
-export interface FieldContent<FieldModel extends NgxFieldModel = NgxFieldModel> {
+export interface FieldContext<FieldModel extends NgxFieldModel = NgxFieldModel> {
     control: AbstractControl,
     field: FieldModel
 }
+
