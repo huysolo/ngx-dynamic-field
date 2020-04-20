@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BaseFieldComponent } from 'projects/dynamic-field/src/public-api';
 
 @Component({

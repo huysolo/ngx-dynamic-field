@@ -18,4 +18,3 @@ export interface FieldContext<FieldModel extends NgxFieldModel = NgxFieldModel> 
     control: AbstractControl,
     field: FieldModel
 }
-

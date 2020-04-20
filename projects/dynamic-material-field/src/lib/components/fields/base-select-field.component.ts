@@ -1,5 +1,5 @@
-import { OnInit, Input } from '@angular/core';
-import { BaseFieldComponent, FieldContext } from 'projects/dynamic-field/src/public-api';
+import {  Input } from '@angular/core';
+import { BaseFieldComponent, FieldContext } from 'dynamic-field';
 import { Observable } from 'rxjs';
 import { SelectFieldModel } from '../../field.model';
 import { FormControl } from '@angular/forms';
@@ -10,8 +10,9 @@ export class BaseSelectFieldComponent extends BaseFieldComponent {
   fieldValues$: Observable<SelectFieldModel[]>;
   searchForm = new FormControl('');
   filterFieldValues$: Observable<SelectFieldModel[]>;
-
-  @Input() set context(context: FieldContext) {
+  searchLabel = 'Tìm giá trị';
+  noEntriesLabel = 'Không tìm thấy gái trị';
+  setContext(context: FieldContext) {
     this.fieldValues$ = this.abstractFieldConfigService.getSelect(context);
     this.filterFieldValues$ = this.fieldValues$.pipe(
       filter(res => res !=  null),
@@ -21,12 +22,13 @@ export class BaseSelectFieldComponent extends BaseFieldComponent {
           fieldValue => checkStringMatch(fieldValue.label, search)
         )))
       )
-    )
+    );
   }
 
   
   constructor(private abstractFieldConfigService: AbstractFieldConfigService) {
     super();
+    this.setContext(this.context)
   }
 
 

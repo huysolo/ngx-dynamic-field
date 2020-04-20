@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken, ModuleWithProviders, Type } from '@angular/core';
 import { InputFieldComponent } from './components/fields/input-field/input-field.component';
-import { DynamicFieldModule } from 'projects/dynamic-field/src/public-api';
-import { DynamicMaterialFieldService } from './dynamic-material-field.service';
+import { DynamicFieldModule, BaseFieldComponent } from 'projects/dynamic-field/src/public-api';
+import { DynamicMaterialFieldService, AbstractFieldConfigService } from './dynamic-material-field.service';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -18,7 +18,10 @@ import { SelectBoxFieldComponent } from './components/fields/select-box-field/se
 import { DatePickerFieldComponent } from './components/fields/date-picker-field/date-picker-field.component';
 import { RadioButtonFieldComponent } from './components/fields/radio-button-field/radio-button-field.component';
 import { NumberFieldComponent } from './components/fields/number-field/number-field.component';
-import { BaseSelectFieldComponent } from './components/fields/base-select-field.component';
+
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { CommonModule } from '@angular/common';
+import { FieldsToken } from './components/fields';
 
 const fields = [
   InputFieldComponent,
@@ -28,19 +31,31 @@ const fields = [
   SelectBoxFieldComponent,
   RadioButtonFieldComponent,
   NumberFieldComponent,
-  BaseSelectFieldComponent
 ];
 
 const components = [
   fields
 ];
 
+
+
 @NgModule({
   declarations: [
     components,
   ],
   providers: [
-    DynamicMaterialFieldService
+    DynamicMaterialFieldService,
+    {
+      provide: FieldsToken,
+      useValue: {
+        datePicker: DatePickerFieldComponent,
+        selectBox: SelectBoxFieldComponent,
+        multiSelect: MultiselectFieldComponent,
+        textField: InputFieldComponent,
+        textArea: TextAreaFieldComponent,
+        radioButton: RadioButtonFieldComponent,
+      }
+    }
   ],
   imports: [
     ReactiveFormsModule,
@@ -49,10 +64,24 @@ const components = [
     MatFormFieldModule,
     MatDatepickerModule,
     MatRadioModule,
-    DynamicFieldModule.forRoot(DynamicMaterialFieldService)
+    CommonModule,
+    DynamicFieldModule.forRoot(DynamicMaterialFieldService),
+    NgxMatSelectSearchModule
   ],
   exports: [
     DynamicFieldModule
   ]
 })
-export class DynamicMaterialFieldModule { }
+export class DynamicMaterialFieldModule {
+  static forConfig(configService: Type<AbstractFieldConfigService>): ModuleWithProviders {
+    return {
+      ngModule: DynamicMaterialFieldModule,
+      providers: [
+        {
+          provide: AbstractFieldConfigService,
+          useClass: configService
+        }
+      ]
+    }
+  }
+}

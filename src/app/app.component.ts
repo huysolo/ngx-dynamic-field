@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  form =  new FormControl({})
+  form =  new FormControl()
   fields: FieldModel[] = [
     {
       name: 'text',
@@ -25,7 +25,7 @@ export class AppComponent {
       name: 'date',
       label: 'sss',
       type: 'field',
-      displayType: 'datePicker',
+      displayType: 'multiSelect',
       isEditable: true,
       isRequired: true
     }
@@ -35,7 +35,7 @@ export class AppComponent {
     interval(500).subscribe(() => this.nunglonham = this.form.invalid);
     this.form.setValue({
       text: 'xxx',
-      date: new Date()
+      date: []
     });
 
     this.http.get<{
