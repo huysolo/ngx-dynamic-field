@@ -42,7 +42,7 @@ export class FormResolverComponent implements ControlValueAccessor, Validator {
     });
 
     this.value$.subscribe(value => {
-      this.form.setValue(value);
+      this.form.patchValue(value);
     })
   }
 

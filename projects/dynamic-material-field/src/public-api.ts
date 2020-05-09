@@ -4,3 +4,4 @@
 
 export * from './lib/dynamic-material-field.service';
 export * from './lib/dynamic-material-field.module';
+export * from './lib/field.model';

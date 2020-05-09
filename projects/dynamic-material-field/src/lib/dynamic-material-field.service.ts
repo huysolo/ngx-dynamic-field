@@ -2,7 +2,7 @@ import { AbstractGenerateFieldService, NgxFieldModel, FieldType, DynamicFormGrou
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { SelectFieldModel } from './field.model';
-import { Inject, Type, Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import {FieldsToken, FieldMap} from './components/fields'
 export interface FieldModel extends NgxFieldModel {
   displayType?: string;

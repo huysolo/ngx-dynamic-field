@@ -4,8 +4,9 @@ import { SelectFieldModel } from '../../field.model';
 import { FormControl } from '@angular/forms';
 import { filter, switchMap, map, startWith } from 'rxjs/operators';
 import { AbstractFieldConfigService } from '../../dynamic-material-field.service';
+import { OnChanges, SimpleChanges } from '@angular/core';
 
-export class BaseSelectFieldComponent extends BaseFieldComponent {
+export class BaseSelectFieldComponent extends BaseFieldComponent implements OnChanges {
   fieldValues$: Observable<SelectFieldModel[]>;
   searchForm = new FormControl('');
   filterFieldValues$: Observable<SelectFieldModel[]>;
@@ -27,14 +28,14 @@ export class BaseSelectFieldComponent extends BaseFieldComponent {
   
   constructor(private abstractFieldConfigService: AbstractFieldConfigService) {
     super();
-    this.setContext(this.context)
   }
-
-
-
-  ngOnInit(): void {
+  
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.context && changes.context.currentValue) {
+      this.setContext(changes.context.currentValue)
+      
+    }
   }
-
 }
 
 

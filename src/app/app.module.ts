@@ -16,6 +16,7 @@ import { of } from 'rxjs';
 @Injectable()
 export class ConfigService extends AbstractFieldConfigService{
   getSelect(context: FieldContext<FieldModel>): import("rxjs").Observable<SelectFieldModel[]> {
+    console.log(context)
     return of([
       {
         value: 'xxx',
